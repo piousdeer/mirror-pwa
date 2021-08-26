@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/icons/vector.svg" type="image/x-icon" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Mirror</title>
+    <meta
+      name="description"
+      content="Use your camera as a mirror online. You can flip the image horizontally like a true mirror does."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <noscript>Enable JavaScript to use this app.</noscript>
+
+    <div id="intro" hidden>
+      <h1>Mirror</h1>
+      <p>Use your camera as a mirror. You can flip the image horizontally.</p>
+      <button id="start">Start</button>
+      <span id="error"></span>
+    </div>
+
+    <div id="main" hidden>
+      <video></video>
+      <div class="option">
+        <input type="checkbox" id="flip" /><label for="flip">Flip</label>
+      </div>
+    </div>
+
+    <footer>
+      <span
+        >Mirror —
+        <a href="https://github.com/piousdeer/mirror-pwa">Source code</a></span
+      >
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

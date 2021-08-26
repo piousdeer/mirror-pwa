@@ -1,0 +1,79 @@
+:root {
+  color-scheme: dark;
+}
+
+/* Tell browser the hidden attribute should take precedence over other display
+  styles. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  /* Set body height to at least 100% of the screen size to ensure footer can
+    always be at the bottom. */
+  min-height: 100vh;
+  
+  display: grid;
+  place-items: center;
+  /* Make first row (intro or main view) take up all of the space. The other
+    rows (footer) will be as small as possible. */
+  grid-template-rows: 1fr;
+
+  /* vw units don't account for scrollbar width, 100vw video causes a
+    horizontal overflow which doesn't otherwise impact the app. Hide it. */
+  overflow-x: hidden;
+
+  background: black;
+  color: white;
+
+  font-family: sans-serif;
+}
+
+a {
+  color: skyblue;
+}
+
+button {
+  padding: 5px 20px;
+}
+
+#intro {
+  padding: 1em;
+}
+
+#error {
+  color: red;
+}
+
+#main {
+  display: grid;
+  place-items: center;
+}
+
+#main video {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Crop video to fit screen when viewport height exceeds viewport width. */
+@media (orientation: portrait) {
+  #main video {
+    object-fit: cover;
+  }
+}
+
+.option {
+  margin: 10px 0;
+  /* Use flex to vertically center the checkbox and its label. It's just a few
+    pixels off normally. */
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  margin: 10px 0;
+  /* Footer should always be the 2nd row so it stays at the bottom. This only
+    has an effect when both intro and main view are hidden. */
+  grid-row: 2;
+}
